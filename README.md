@@ -1,6 +1,6 @@
 
 
-![test coverage]("https://github.com/Techharik/learn-cicd-typescript-starter/actions/runs/24647412656/badge.svg")
+![test coverage]("https://github.com/Techharik/learn-cicd-typescript-starter/actions/workflows/ci.yml/badge.svg")
 
 # learn-cicd-typescript-starter (Notely)
 

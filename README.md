@@ -1,3 +1,7 @@
+
+
+![test coverage]("https://github.com/Techharik/learn-cicd-typescript-starter/actions/runs/24647412656/badge.svg")
+
 # learn-cicd-typescript-starter (Notely)
 
 This repo contains the typescript starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).

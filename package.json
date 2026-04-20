@@ -10,7 +10,7 @@
     "build": "npx tsc",
     "start": "node dist/main.js",
     "dev": "npx tsc && node dist/main.js",
-    "test":"vitest --run"
+    "test": "vitest --run"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -18,7 +18,7 @@
     "@types/node": "^22.9.0",
     "drizzle-kit": "^0.28.1",
     "globals": "^15.12.0",
-    "tsx": "^4.19.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.6.3",
     "vitest": "^4.1.4"
   },
@@ -27,8 +27,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.36.2",
+    "esbuild": "^0.28.0",
     "express": "^4.21.1",
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.3",
+    "vite": "^8.0.8"
   },
   "prettier": {
     "printWidth": 80,

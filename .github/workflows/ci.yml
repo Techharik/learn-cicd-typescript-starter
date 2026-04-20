@@ -21,23 +21,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name : Run Tests
-        run : npm run test --coverage
+      - name: Run Tests
+        run: npm run test -- --coverage
+
   style:
-       name : Style
-       runs-on: ubuntu-latest
-     
-      steps:
-        - name: Check out code
-          uses: actions/checkout@v4
+    name: Style
+    runs-on: ubuntu-latest
 
-        - name: Set up Node
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
 
-        - name: Install dependencies
-          run: npm ci
-      
-        - name : formating checks
-        - run  : npm run format:check
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Formatting checks
+        run: npm run format:check

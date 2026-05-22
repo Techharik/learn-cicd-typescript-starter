@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DATABASE_URL:${{ secret.DATABASE_URL }}
+      DATABASE_URL: '${{ secret.DATABASE_URL }}'
 
     steps:
       - name: Checkout the code

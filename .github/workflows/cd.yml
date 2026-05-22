@@ -1,25 +1,41 @@
 on:
   push:
     branches:
-      [main]
+      - main
+
 jobs:
   deploy:
-    name : Deploy
-    runs-on : ubuntu-latest
+    name: Deploy
+    runs-on: ubuntu-latest
 
     steps:
-       - name : checkout the code
-         uses : actions/checkout@v4
-       
-       - name : Set up Node
-         uses: actions/setup-node@v4
-         with:
-           node-version: 22
+      - name: Checkout the code
+        uses: actions/checkout@v4
 
-       - name: Install dependencies
-         run : npm ci
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-       - name : Build The Apps
-         run  : npm run build
-     
+      - name: Install dependencies
+        run: npm ci
 
+      - name: Build the app
+        run: npm run build
+
+      - id: auth
+        name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Verify gcloud
+        run: gcloud info
+
+      - name: Build Docker image and push to Artifact Registry
+        run: |
+          gcloud builds submit \
+            --tag us-central1-docker.pkg.dev/notely-493908/notely-ar-repo/notely:start .
